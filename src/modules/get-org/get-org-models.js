@@ -36,7 +36,7 @@ const getOrg = async () => {
 const validateObject = async (reponse) => {
   try {
     return reponse.slice(0, 5).sort(({created_at, language }) => {
-      if (language === 'C#')
+      if (!language && language === 'C#')
       return new Date(created_at) - new Date(created_at);
     });
   } catch (err) {

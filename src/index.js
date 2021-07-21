@@ -14,6 +14,7 @@ const app = express();
 const { logger, responseMiddleware } = require('./middlewares');
 
 const OrgRoutes = require('./modules/get-org/get-org-routes');
+const SwaggerRoutes = require('./doc/swagger-config');
 
 app.use(compression());
 app.use(cors());
@@ -21,15 +22,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(responseMiddleware);
 
-app.use('/api', [OrgRoutes]);
+app.use('/api', [OrgRoutes, SwaggerRoutes]);
 
 // catch 404
-app.use((req, res) =>
-  res.parseReturn({
+app.use((req, res) => res.parseReturn({
     message: `Invalid Route, Access http://${ip.address()}:${PORT}/api/docs`,
     status: 404,
-  }),
-);
+  }),);
 
 const startServer = async () => {
   app.listen(PORT, () => {
