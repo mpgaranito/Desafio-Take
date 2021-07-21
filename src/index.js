@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 // Constants
 const PORT = process.env.PORT || 5000;
@@ -11,20 +11,25 @@ const ip = require('ip');
 
 const app = express();
 
+const {
+  logger,
+} = require('./middlewares');
+
+const OrgRoutes = require('./modules/get-org/get-org-routes');
+
 
 app.use(compression());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/',  (req, res) => {
-  res.send('Hello World');
-});
+
+app.use('/api', [OrgRoutes]);
 
 
 const startServer = async () => {
   app.listen(PORT, () => {
-   console.log(
+    logger.info(
       `${`Server is running at port ${PORT}, see more about the application on: http://${ip.address()}:${PORT}/api/docs`}`
     );
   });
