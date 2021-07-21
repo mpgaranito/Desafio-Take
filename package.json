@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucioerlan/desafio-take.git"
+  },
+  "author": "Erlan Lucio",
+  "license": "DesafioTake",
+  "bugs": {
+    "url": "https://github.com/lucioerlan/desafio-take/issues"
+  },
+  "homepage": "https://github.com/lucioerlan/desafio-take#readme"
+}
