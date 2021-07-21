@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "mocha tests/**/*.test.js --timeout 5000 --exit",
+    "seed": "node src/database/seeds/Seed.js",
+    "lint": "eslint --fix --ext .js"
   },
   "repository": {
     "type": "git",
