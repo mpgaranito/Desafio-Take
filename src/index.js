@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 // Constants
 const PORT = process.env.PORT || 5000;
