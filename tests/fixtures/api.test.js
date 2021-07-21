@@ -3,7 +3,7 @@ const { logger } = require('../../src/middlewares');
 
 const getOrg = async () => {
   return api
-    .get('takenet/repos?type=owner&page=1&per_page=1')
+    .get('takenet/repos?type=owner&page=1&per_page=100')
     .then(res => res)
     .catch(error => logger.error(error));
 };
