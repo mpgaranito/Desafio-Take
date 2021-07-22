@@ -4,6 +4,6 @@ const { cachingMiddleware } = require('../../middlewares');
 
 const orgController = new OrgController();
 
-router.get('/get-repos-take', orgController.show);
+router.get('/get-repos-take', cachingMiddleware.route(), orgController.show);
 
 module.exports = router;
