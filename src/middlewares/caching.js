@@ -9,8 +9,10 @@ const cachingMiddleware = ExpressRedisCache({
   port: process.env.REDIS_PORT,
   host: process.env.REDIS_HOST,
   auth_pass: process.env.REDIS_PASS || null,
-  key: 'cacheKey',
-  expiresIn: 15,
+  key: 'cache',
+  expire: 60 * 60 * 24 * 30,
+  ttl: process.env.REDIS_TTL || 3600,
+  prefix: 'cache',
 });
 
 
