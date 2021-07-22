@@ -17,8 +17,8 @@ const getOrg = async () => {
       return {
         name: repo.name,
         description: repo.description,
-        language: repo.language,
         created_at: repo.created_at,
+        avatar: repo.owner.avatar_url,
       };
     });
 
@@ -36,7 +36,7 @@ const getOrg = async () => {
 const validateObject = async (reponse) => {
   try {
     return reponse.slice(0, 5).sort(({created_at, language }) => {
-      if (!language && language === 'C#')
+      if (!!language && language === 'C#')
       return new Date(created_at) - new Date(created_at);
     });
   } catch (err) {
