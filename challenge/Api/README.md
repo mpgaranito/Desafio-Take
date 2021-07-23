@@ -47,7 +47,7 @@ Você precisará do [Node.js](https://nodejs.org) versão 10 ou superior, instal
 
 ```bash
 git clone https://github.com/lucioerlan/Desafio-Take.git
-$ cd Desafio-Take
+$ cd Desafio-Take/challenge/Api
 $ npm install
 ```
 
@@ -97,6 +97,27 @@ $ npm run test
 
 <br /><br />
 
+<!-- RUNNING -->
+
+
+
+## 🎲 Rodando a Api Localmente
+
+```bash
+
+# Execute a aplicação
+$ npm run start
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O servidor inciará na porta:5000 - acesse http://localhost:5000 
+
+```
+
+<br />
+
+
 <!-- DOCKER -->
 
 ## 🐳 Executando com o Docker
@@ -117,7 +138,7 @@ $ docker-compose up
 
 ## 🤖 Publicação
 
-- Ambos os códigos estão hospedados no Heroku, integrado com o Github /ci
+- O código está hospedado no Heroku, integrado com o Github /ci
 
 **-** <a href="https://desafio-take-github.herokuapp.com/api/docs" target="_blank">Backend</a>
 
